@@ -1,0 +1,14 @@
+  span.iTunesArtwork {
+        width:      150px;
+        height:     150px;
+  }
+  img.iTunesArtwork {
+        width:      150px;
+        height:     150px;
+  }
+   img.iTunesArtworkMask {
+        position:relative;
+        left: -150px;
+        width:      150px;
+        height:     150px;
+   }   
