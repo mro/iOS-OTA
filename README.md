@@ -2,7 +2,7 @@
 
 ## IPA OTA Deployment
 
-requires just an IPA in <code><myproject>/deploy/v<num>/Debug</code> as created e.g. by Xcode "Organizer -> Archived Applications -> Share -> Save to Disk".
+requires just an IPA in <code>&lt;myproject&gt;/deploy/v&lt;num&gt;/Debug</code> as created e.g. by Xcode "Organizer -> Archived Applications -> Share -> Save to Disk".
 
 Extracts mobileprovision, Icon and iTunesArtwork from the IPA.
 
