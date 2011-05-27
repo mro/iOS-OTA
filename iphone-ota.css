@@ -1,10 +1,35 @@
-  .iTunesArtwork {
-        width:      150px;
-        height:     150px;
-  }
-  img.iTunesArtworkMask {
-        margin: 0 0 0 -150px;
-        padding: 0;
-        width:      150px;
-        height:     150px;
-   }   
+body {
+    background-color: #C8CACC;
+    padding: 5px;
+    font-family:Arial,sans;
+}
+h1 {
+    font-size:18pt;
+    margin: 5px;
+}
+#header h1 {
+    margin:0px;
+    padding:0;
+}
+#header p {
+    margin:0px;
+    padding:0;
+}
+h2 {
+    font-size:14pt;
+    margin: 3px;
+    padding: 2px;
+}
+.iTunesArtwork {
+    width:      60px;
+    height:     60px;
+}
+span.iTunesArtwork {
+    padding:0 5px 0 0;
+}
+img.iTunesArtworkMask {
+    margin: 0 0 0 -60px;
+    padding: 0;
+    width:      60px;
+    height:     60px;
+}   
