@@ -77,7 +77,7 @@ class IphoneOta
 		# @INFO[:CFBundleDisplayName]
 		@MANIFEST['items'][0]['metadata']['title']
 	end
-	
+
 	# iTunesArtwork image url.
 	def itunes_artwork_url
 		@MANIFEST['items'][0]['assets'].each do |asset|
@@ -97,7 +97,7 @@ class IphoneOta
 	def change_url
 		URI::parse ipa_url.to_s.gsub(/\/[^\/]+\.ipa$/, '/../html/main.html#change')
 	end
-	
+
 	# Zip File with IPA + mobileprovision - ready for iTunes sync.
 	def zip_url
 		URI::parse ipa_url.to_s.gsub(/\.ipa$/, '.zip')

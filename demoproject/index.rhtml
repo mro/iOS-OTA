@@ -1,6 +1,6 @@
 <% 
 	Dir.chdir( File.dirname( __FILE__ ) )
-	require '../iphone-ota.rb'
+	require "../iphone-ota.rb"
 	@OTA = IphoneOta.most_recent @BASE_URL
 %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -12,7 +12,7 @@
   <link rel="shortcut icon" type="image/png" href="<%= @OTA.itunes_artwork_url %>" />
   <link rel="stylesheet" type="text/css" href="../iphone-ota.css" />
 
-  <title>DemoProject</title>
+  <title><%= @OTA.title %></title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
   <a href="<%= @BASE_URL %>"><%= @BASE_URL %></a>
   <%= img_qr_code %></p>
 
-  <h1>DemoProject</h1>
+  <h1><%= @OTA.title %></h1>
 
   <h2>Current Version</h2>
 
