@@ -10,7 +10,9 @@
   <meta name="viewport" content="width=320" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <link rel="shortcut icon" type="image/png" href="<%= @OTA.itunes_artwork_url %>" />
-  <link rel="stylesheet" type="text/css" href="../iphone-ota.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../ios-ota.screen.css" />
+  <!-- http://www.alexanderjaeger.de/webseite-mit-css-iphone-optimieren/ -->
+  <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="../ios-ota.handheld.css" />
 
   <title><%= @OTA.title %></title>
 </head>
