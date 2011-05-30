@@ -1,6 +1,6 @@
 <% 
 	Dir.chdir( File.dirname( __FILE__ ) )
-	require "../iphone-ota.rb"
+	require "../ios-ota.rb"
 	@OTA = IphoneOta.most_recent @BASE_URL
 %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -21,7 +21,7 @@
   <div id="header">
     <p style="float:left"><span class="iTunesArtwork"><img src="<%= @OTA.itunes_artwork_url %>" alt="Icon" class="iTunesArtwork" 
     /><img src="../iTunesArtwork-shine-512x512.png" alt="artwork" class="iTunesArtworkMask" /></span></p>
-    <h1><%= @OTA.title %><sup> &beta;<%= @OTA.version %></sup></h1>
+    <h1><%= @OTA.title %><sup> &beta;<%= @OTA.full_version %></sup></h1>
     <p style="float:none"><%= @OTA.mtime.strftime('%a, %d. %b %Y %H:%M') %></p>
   </div>
 

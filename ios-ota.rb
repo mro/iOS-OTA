@@ -57,7 +57,7 @@ class IphoneOta
 	# 4. first asset entry is the only relevant
 	# 5. iTunesArtwork is png
 	# 6. iTunesArtwork needs shine
-	def initialize mani_plist_path
+	def initialize mani_plist_path, info=nil
 		@MANI_PLIST_PATH = mani_plist_path
 		plist = CFPropertyList::List.new :file => @MANI_PLIST_PATH
   		@MANIFEST = CFPropertyList.native_types plist.value
@@ -71,6 +71,14 @@ class IphoneOta
 	def version
 		# @INFO[:CFBundleVersion].to_i
 		@MANIFEST['items'][0]['metadata']['bundle-version'].to_i
+	end
+
+	def full_version info=nil
+  		info = File.join File.dirname(@MANI_PLIST_PATH), 'Info.plist' if info.nil?
+  		unless defined? @INFO
+  			@INFO = CFPropertyList.native_types(CFPropertyList::List.new(:file => info).value)	
+  		end
+		"#{@INFO['CFBundleShortVersionString']}/#{@INFO['CFBundleVersion']}"
 	end
 
 	def title
