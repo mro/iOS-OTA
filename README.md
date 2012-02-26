@@ -10,3 +10,5 @@ Extracts mobileprovision, Icon and iTunesArtwork from the IPA and automagically 
 
 - [Apache Webserver with eruby](http://www.google.de/search?q="eruby"+apache) running.
 - install [cfpropertylist gem](https://github.com/ckruse/CFPropertyList).
+
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=mro&url=https://github.com/mro/iOS-OTA&title=iOS-OTA&language=&tags=github&category=software) 
