@@ -1,0 +1,35 @@
+body {
+    background-color: #C8CACC;
+    width: 320px;
+    margin: 0px;
+    padding: 5px;
+	border-radius: 0;
+}
+h1 {
+}
+#header h1 {
+}
+#header p {
+}
+h2 {
+}
+#header {
+    height: 60px;
+}
+.iTunesArtwork {
+    width:      60px;
+    height:     60px;
+}
+img.iTunesArtwork, img.iTunesArtworkMask  {
+	border-radius: 10px;
+    box-shadow: 1px 2px 1px #333;
+}
+a.iTunesArtwork {
+    padding:0 5px 0 0;
+}
+img.iTunesArtworkMask {
+    margin: 0 0 0 -60px;
+    padding: 0;
+    width:      60px;
+    height:     60px;
+}   

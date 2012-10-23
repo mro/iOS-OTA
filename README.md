@@ -8,5 +8,5 @@ Extracts mobileprovision, Icon and iTunesArtwork from the IPA and automagically 
 
 ## Installation
 
-- [Apache Webserver with eruby](http://www.google.de/search?q="eruby"+apache) running.
+- [Apache Webserver with erubis](http://www.google.de/search?q="erubis"+apache) running.
 - install [cfpropertylist gem](https://github.com/ckruse/CFPropertyList).
