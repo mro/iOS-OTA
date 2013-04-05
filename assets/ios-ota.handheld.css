@@ -1,9 +1,12 @@
+html {
+  background-color: #C8CACC;
+}
 body {
-    background-color: #C8CACC;
-    width: 320px;
-    margin: 0px;
-    padding: 5px;
-	border-radius: 0;
+  background-color: #C8CACC;
+  width: 320px;
+  margin: 0px;
+  padding: 5px;
+  border-radius: 0;
 }
 h1 {
 }
@@ -14,28 +17,35 @@ h1 {
 h2 {
 }
 #header {
-    height: 60px;
+  height: 60px;
 }
 .iTunesArtwork {
-    width:      60px;
-    height:     60px;
+  width:    60px;
+  height:   60px;
 }
-img.iTunesArtwork, img.iTunesArtworkMask  {
-	border-radius: 10px;
-    box-shadow: 1px 2px 1px #333;
+img.iTunesArtwork, img.iTunesArtworkMask {
+  border-radius: 10px;
+  box-shadow: 1px 2px 1px #333;
 }
 a.iTunesArtwork {
-    padding:0 5px 0 0;
+  padding:0 5px 0 0;
 }
 img.iTunesArtworkMask {
-    margin: 0 0 0 -60px;
-    padding: 0;
-    width:      60px;
-    height:     60px;
-}   
+  margin: 0 0 0 -60px;
+  padding: 0;
+  width:    60px;
+  height:   60px;
+}
 #qr_code {
   display:none;
 }
 .zip {
   display:none;
+}
+#current > a.ota {
+  font-weight: bold;
+  color: white;
+  background-color: green;
+  padding: 1.5ex 3ex;
+  border-radius: 8px;
 }
