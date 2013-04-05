@@ -14,26 +14,22 @@ require 'cfpropertylist' # https://github.com/ckruse/CFPropertyList
 # rm -rf doc; rdoc --diagram --charset utf8 --main IphoneOta
 
 # Ease ipa OTA deployment.
-class IphoneOta
+class IosIpa
 
-	def self.most_recent base_url=nil, ipa_files=File.join('deploy','v*', 'Debug', '*.ipa')
-		base_url = 'http://' << ENV['HTTP_HOST'] << ENV['REQUEST_URI'].gsub(/\/(index\.[^\/]+)?$/, '') << '/' if base_url.nil?
-		raise "base_url is nil" if base_url.nil?
-		base_url = URI::parse base_url unless base_url.kind_of? URI
-		raise "base_url is unparseable" if base_url.nil?
-
-		each_version(base_url, ipa_files, false) { |ota| return ota }
+	def self.most_recent_ipa base_url=nil, ipa_files=File.join('deploy','v*', 'Debug', '*.ipa')
+		each_ipa(base_url, ipa_files, false) { |ota| return ota }
 		nil
 	end
 	
-	def self.each_version base_url, ipa_files=File.join('deploy','v*', 'Debug', '*.ipa'), sort_ascending=false
+	def self.each_ipa base_url=nil, ipa_files=File.join('deploy','v*', 'Debug', '*.ipa'), sort_ascending=false
+		base_url = 'http' << (ENV['HTTPS'] == 'on' ? 's' : '') << '://' << ENV['HTTP_HOST'] << ENV['REQUEST_URI'].gsub(/\/(index\.[^\/]+)?$/, '') << '/' if base_url.nil?
 		raise "base_url is nil" if base_url.nil?
 		base_url = URI::parse base_url unless base_url.kind_of? URI
 		raise "base_url is unparseable" if base_url.nil?
 
 		ipa_files = Dir[ipa_files] if ipa_files.kind_of? String
 		raise "Sry, but I need an array" unless ipa_files.kind_of? Array
-		a = ipa_files.collect{|ipa| IphoneOta.new base_url, create_manifest_from_ipa(ipa, base_url, false)}
+		a = ipa_files.collect{|ipa| self.new base_url, create_manifest_from_ipa(ipa, base_url, false)}
 		if sort_ascending
 			a.sort!{ |x,y| x <=> y }
 		else
@@ -120,7 +116,7 @@ class IphoneOta
 		opts[:size] = 150 if opts[:size].nil?
 		opts[:alt] = 'QR Code' if opts[:alt].nil?
 		opts[:title] = opts[:alt] if opts[:title].nil?
-		"<img src='http://chart.apis.google.com/chart?cht=qr&amp;chs=#{opts[:size]}x#{opts[:size]}&amp;chl=#{opts[:url]}' alt='#{opts[:alt]}' title='#{opts[:title]}' />"
+		"<img src='https://chart.googleapis.com/chart?cht=qr&amp;chs=#{opts[:size]}x#{opts[:size]}&amp;chl=#{opts[:url]}' alt='#{opts[:alt]}' title='#{opts[:title]}' />"
 	end
 
 	# IPA file modification time

@@ -33,3 +33,9 @@ img.iTunesArtworkMask {
     width:      60px;
     height:     60px;
 }   
+#qr_code {
+  display:none;
+}
+.zip {
+  display:none;
+}
