@@ -39,13 +39,3 @@ img.iTunesArtworkMask {
 #qr_code {
   display:none;
 }
-.zip {
-  display:none;
-}
-#current > a.ota {
-  font-weight: bold;
-  color: white;
-  background-color: green;
-  padding: 1.5ex 3ex;
-  border-radius: 8px;
-}
