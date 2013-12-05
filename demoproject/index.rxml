@@ -1,4 +1,7 @@
 <%
+  # https://github.com/mro/iOS-OTA
+  # Copyright (c) 2011-2014 Marcus Rohrmoser mobile Software. All rights reserved.
+  #
   Dir.chdir(File.dirname(__FILE__))
   require '../ios-ota/ios-ipa.rb'
   RELEASES = Name::Mro::IosIpa.releases
@@ -11,18 +14,18 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
   <doap:Project rdf:about="">
-    <doap:bug-database rdf:resource="http://developer.mro.name/projects/coonference/"/>
-    <doap:bug-database rdf:resource="mailto:redmine@mro.name?subject=%3CProblembeschreibung%3E&amp;body=Project:%20coonference%0D%0A%0D%0AWas%20genau%20schmerzt?%20Bitte%20mit%20Screenshot,%20Merci!"/>
+    <doap:bug-database rdf:resource="http://..."/>
+    <doap:bug-database rdf:resource="mailto:..."/>
     <doap:download-page rdf:resource=""/>
-    <doap:homepage rdf:resource="http://developer.mro.name/projects/coonference/"/>
-    <doap:name>Coonference</doap:name>
+    <doap:homepage rdf:resource="http://..."/>
+    <doap:name>...</doap:name>
 <% RELEASES.each do |ota| %>
     <doap:release rdf:resource="<%= ota.path %>"/>
 <% end %>
     <doap:repository>
       <doap:GitRepository>
-        <doap:browse rdf:resource="http://developer.mro.name/projects/coonference/repository"/>
-        <doap:location rdf:resource="ssh://gitolite@git.dev.mro.name:986/alsw/coonference.git"/>
+        <doap:browse rdf:resource="http://..."/>
+        <doap:location rdf:resource="ssh://..."/>
       </doap:GitRepository>
     </doap:repository>
     <foaf:img rdf:resource="iTunesArtwork.png"/>

@@ -2,6 +2,7 @@
 # iOS IPA OTA deployment helper.
 #
 # https://github.com/mro/iOS-OTA
+# Copyright (c) 2013-2014 Marcus Rohrmoser mobile Software. All rights reserved.
 #
 require 'rubygems'
 require 'uri'            # http://www.ruby-doc.org/stdlib-1.8.7/libdoc/uri/rdoc/

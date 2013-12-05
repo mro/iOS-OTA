@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
+
+  Turn DOAP rdf into html.
+
+  https://github.com/mro/iOS-OTA
+  Copyright (c) 2013-2014 Marcus Rohrmoser mobile Software. All rights reserved.
+
   http://www.w3.org/TR/xslt
   http://www.w3.org/TR/xpath/
 -->
@@ -76,7 +82,7 @@
   "border:0;width:88px;height:31px" src="../assets/vcss.png" alt=
   "CSS ist valide!" /></a></p -->
         <p id="poweredby" style="color:#888">
-        	Powered by <a href="https://github.com/mro/iOS-OTA">github.com/mro/iOS-OTA</a><br/>
+          Powered by <a href="https://github.com/mro/iOS-OTA">github.com/mro/iOS-OTA</a><br/>
           RDF: <tt>$ <a href="http://librdf.org/raptor/rapper.html">rapper</a> --guess --output turtle
           '<span id="my-url"><xsl:value-of select="$base_url"/></span>'</tt>
         </p>
@@ -102,7 +108,7 @@
     <p style="float:none"/>
     <!-- h2>Current Version</h2 -->
     <ul class="ipas" id="current">
-    	<xsl:apply-templates select="."/>
+      <xsl:apply-templates select="."/>
     </ul>
   </xsl:template>
 
@@ -117,12 +123,12 @@
         <xsl:value-of select="$version"/>
       </a>,
       <span class="date"><xsl:value-of select="$date"/>,&#10;</span>
-			<xsl:if test="string-length($zip_url)">
-				<span class="zip"><a href="{$zip_url}">zip</a>,&#10;</span>
-			</xsl:if>
-			<xsl:if test="string-length($docs_url)">
-				<span class="docs"><a href="{$docs_url}">docs</a>,&#10;</span>
-			</xsl:if>
+      <xsl:if test="string-length($zip_url)">
+        <span class="zip"><a href="{$zip_url}">zip</a>,&#10;</span>
+      </xsl:if>
+      <xsl:if test="string-length($docs_url)">
+        <span class="docs"><a href="{$docs_url}">docs</a>,&#10;</span>
+      </xsl:if>
     </li>
   </xsl:template>
 </xsl:stylesheet>
