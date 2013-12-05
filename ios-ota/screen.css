@@ -50,3 +50,21 @@ img.iTunesArtworkMask {
 .changes {
   display:none;
 }
+#poweredby {
+  font-size: 10px;  
+}
+
+
+@media (device-width: 320px), (device-width: 768px) {
+  /* OTA installation only makes sense on iOS devices. */
+  #current a.ota {
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    padding: 1.5ex 3ex;
+    border-radius: 8px;
+  }
+  .zip {
+    display:none;
+  }
+}
