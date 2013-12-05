@@ -4,7 +4,7 @@
 ## IPA OTA Deployment
 
 requires just an [IPA](https://en.wikipedia.org/wiki/.ipa_%28file_extension%29) as created
-e.g. by [Xcode](developer.apple.com/tools/xcode/)
+e.g. by [Xcode](http://developer.apple.com/tools/xcode/)
 "Organizer -> Archived Applications -> Share -> Save to Disk".
 
 Extracts Icon, iTunesArtwork and Info.plist from the IPA and automagically creates the

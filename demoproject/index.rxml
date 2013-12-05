@@ -2,6 +2,7 @@
   # https://github.com/mro/iOS-OTA
   # Copyright (c) 2011-2014 Marcus Rohrmoser mobile Software. All rights reserved.
   #
+begin
   Dir.chdir(File.dirname(__FILE__))
   require '../ios-ota/ios-ipa.rb'
   RELEASES = Name::Mro::IosIpa.releases
@@ -58,4 +59,4 @@
     <dct:format>image/png</dct:format>
     <foaf:thumbnail rdf:resource="Icon.png"/>
   </foaf:Image>
-</rdf:RDF>
+</rdf:RDF><% rescue Exception => e %><%= e %><% end %>

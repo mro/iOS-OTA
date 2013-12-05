@@ -105,8 +105,6 @@ module Name
         manifest
       end
 
-    private
-
       def unzip_from_ipa filenames
         cmd = "unzip "
         cmd <<= '-j' << ' '
