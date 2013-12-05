@@ -50,13 +50,12 @@ module Name
         begin
           self.new base, ipa_path
         rescue Exception => e
-          nil
+          puts e
         end
       end
 
-      attr_reader :base_uri
-      attr_reader :ipa_path, :path, :date_created, :manifest_path, :version, :docs_path, :artwork_path
-      attr_reader :info_plist_path, :icon_path
+      attr_reader :path, :date_created, :manifest_path, :version, :docs_path, :artwork_path
+      attr_reader :icon_path
 
       def initialize base, ipa_path
         @base_uri = base
@@ -75,10 +74,12 @@ module Name
         @docs_path = File.join 'docs', 'v' + self.version, ''
         @docs_path = nil unless File.exist? @docs_path
 
-        @date_created = File.mtime self.info_plist_path
+        @date_created = File.mtime self.manifest_path
       end
 
     protected
+
+      attr_reader :base_uri, :ipa_path, :info_plist_path
 
       def make_manifest
         if File.exist?( self.manifest_path )
@@ -102,6 +103,7 @@ module Name
         
         t = File.mtime self.info_plist_path
         File.utime t, t, self.manifest_path
+        File.delete self.info_plist_path
         manifest
       end
 
