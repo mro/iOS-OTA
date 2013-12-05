@@ -1,4 +1,3 @@
-
 # Simplify iPhone OTA deployment
 
 ## IPA OTA Deployment
@@ -11,7 +10,7 @@ Extracts Icon, iTunesArtwork and Info.plist from the IPA and automagically creat
 required manifest.
 
 Creates a [doap](http://usefulinc.com/doap/) rdf/xml,
-rendered by a [xslt](http://www.w3.org/TR/xslt) stylesheet (client-side).
+rendered to html by a [xslt](http://www.w3.org/TR/xslt) stylesheet (client-side).
 
 ## Installation
 
