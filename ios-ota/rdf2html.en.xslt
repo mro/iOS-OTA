@@ -97,7 +97,7 @@
       <p style="float:left">
         <a href="itms-services://?action=download-manifest&amp;url={$manifest_url}" class="iTunesArtwork">
           <img src="{$artwork_url}" alt="Icon" class="iTunesArtwork"/>
-          <img src="../ios-ota/iTunesArtwork-shine-512x512.png" alt="artwork" class="iTunesArtworkMask"/>
+          <img src="../ios-ota/iTunesArtwork-shine-512x512.svg" alt="artwork" class="iTunesArtworkMask"/>
         </a>
       </p>
       <p id="qr_code" style="float:right">
