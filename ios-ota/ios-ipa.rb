@@ -158,16 +158,16 @@ module Name
           'kind' => "software-package",
           'url' => ipa_url.to_s
         }
-        ret['assets'] << {
-          'kind' => "display-image",
-          'url' => (ipa_url + 'Icon.png').to_s,
-          'needs-shine' => true
-        }
-        ret['assets'] << {
-          'kind' => "full-size-image",
-          'url' => (ipa_url + 'iTunesArtwork').to_s,
-          'needs-shine' => true
-        }
+#         ret['assets'] << {
+#           'kind' => "display-image",
+#           'url' => (ipa_url + 'Icon.png').to_s,
+#           'needs-shine' => true
+#         }
+#         ret['assets'] << {
+#           'kind' => "full-size-image",
+#           'url' => (ipa_url + 'iTunesArtwork').to_s,
+#           'needs-shine' => true
+#         }
         ret = {'items' => [ret]}
       end
 
