@@ -3,9 +3,9 @@
 
   Turn DOAP rdf into html.
 
-  https://github.com/mro/iOS-OTA
-
-  Copyright (c) 2013-2014, Marcus Rohrmoser mobile Software
+  http://purl.mro.name/ios/ota
+ 
+  Copyright (c) 2013-2015, Marcus Rohrmoser mobile Software
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without modification, are permitted
@@ -103,7 +103,7 @@
   "CSS ist valide!" /></a></p -->
         <p id="poweredby" style="color:#888">
           Powered by <a href="https://github.com/mro/iOS-OTA">github.com/mro/iOS-OTA</a><br/>
-          RDF: <tt>$ <a href="http://librdf.org/raptor/rapper.html">rapper</a> --guess --output turtle
+          RDF (<a href="https://en.wikipedia.org/wiki/DOAP">DOAP</a>): <tt>$ <a href="http://librdf.org/raptor/rapper.html">rapper</a> --guess --output turtle
           '<span id="my-url"><xsl:value-of select="$base_url"/></span>'</tt>
         </p>
       </body>
@@ -120,8 +120,9 @@
           <img src="../ios-ota/iTunesArtwork-shine-512x512.svg" alt="artwork" class="iTunesArtworkMask"/>
         </a>
       </p>
-      <p id="qr_code" style="float:right">
-        <img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=150x150&amp;chl={$base_url}" alt="QR Code" title="QR Code"/>
+      <p id="qr_code" style="float:right;background-color:white;padding:1.5ex">
+        <!-- img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=150x150&amp;chl={$base_url}" alt="QR Code" title="QR Code"/ -->
+        <img src="http://qrfree.kaywa.com/?l=1&amp;s=4&amp;d={$base_url}" alt="QR Code" title="QR Code"/>
       </p>
       <h1><xsl:value-of select="../doap:Project[1]/doap:name"/></h1>
     </div>

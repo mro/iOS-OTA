@@ -1,7 +1,7 @@
 /*
- * https://github.com/mro/iOS-OTA
+ * http://purl.mro.name/ios/ota
  *
- * Copyright (c) 2011-2014, Marcus Rohrmoser mobile Software
+ * Copyright (c) 2011-2015, Marcus Rohrmoser mobile Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are permitted
@@ -62,9 +62,12 @@ h2 {
 a.iTunesArtwork {
   padding:0 15px 0 0;
 }
-img.iTunesArtwork, img.iTunesArtworkMask  {
+img.iTunesArtwork, img.iTunesArtworkMask {
   border-radius: 30px;
   box-shadow: 0.5px 1px 1px #333;
+}
+img.iTunesArtwork {
+  background-color: black;
 }
 img.iTunesArtworkMask {
   margin: 0 0 0 -175px;

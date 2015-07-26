@@ -1,9 +1,9 @@
 #
 # iOS IPA OTA deployment helper.
 #
-# https://github.com/mro/iOS-OTA
+# http://purl.mro.name/ios/ota
 #
-# Copyright (c) 2013-2014, Marcus Rohrmoser mobile Software
+# Copyright (c) 2011-2015, Marcus Rohrmoser mobile Software
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted
@@ -57,9 +57,9 @@ module Name
       end
 
       # array of Release objects for each ipa (recursive)
-      def self.releases base_url=nil
+      def self.releases glob='deploy/**/*.ipa', base_url=nil
         base_url = self.base_uri if base_url.nil?
-        Dir.glob('**/*.ipa').collect{|ipa_path| Release.create(base_url, ipa_path)}.compact
+        Dir.glob(glob).collect{|ipa_path| Release.create(base_url, ipa_path)}.compact
       end
     end
 

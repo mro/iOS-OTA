@@ -34,26 +34,12 @@ begin
 <% RELEASES.each do |ota| %>
   <doap:Version rdf:about="<%= ota.path %>">
     <doap:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime"><%= ota.date_created %></doap:created>
-    <!-- doap:file-release rdf:resource="..."/ -->
     <doap:file-release rdf:resource="<%= ota.manifest_path %>"/>
     <!-- doap:name>unstable</doap:name -->
     <doap:revision><%= ota.version %></doap:revision>
     <doap:specification rdf:resource="<%= ota.docs_path %>"/>
     <foaf:img rdf:resource="<%= ota.artwork_path %>"/>
   </doap:Version>
-<!--
-  <rdf:Description rdf:about="deploy/v0.1+aabaa7b/Debug/Shotgun.ipa">
-    <dct:format>application/octet-stream</dct:format>
-  </rdf:Description>
-  <foaf:Image rdf:about="deploy/v0.1+aabaa7b/Debug/iTunesArtwork.png">
-    <dct:format>image/png</dct:format>
-    <foaf:thumbnail rdf:resource="deploy/v0.1+aabaa7b/Debug/Icon.png"/>
-  </foaf:Image>
-  <rdf:Description rdf:about="deploy/v0.1+aabaa7b/Debug/manifest.plist">
-    <dct:format>text/plain</dct:format>
-    <dct:format>text/xml</dct:format>
-  </rdf:Description>
--->
 <% end %>
   <foaf:Image rdf:about="iTunesArtwork.png">
     <dct:format>image/png</dct:format>
