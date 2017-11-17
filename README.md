@@ -17,5 +17,3 @@ rendered to html by a [xslt](http://www.w3.org/TR/xslt) stylesheet (client-side)
 - [Apache Webserver with eruby](http://www.google.de/search?q="eruby"+apache)
 - or [Lighttpd Webserver with erubis](http://www.google.de/search?q="erubis"+lighttpd) running.
 - install [cfpropertylist gem](https://github.com/ckruse/CFPropertyList).
-
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=mro&url=https://github.com/mro/iOS-OTA&title=iOS-OTA&language=&tags=github&category=software) 
