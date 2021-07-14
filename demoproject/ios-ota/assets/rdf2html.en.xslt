@@ -5,7 +5,7 @@
 
   http://purl.mro.name/ios/ota
  
-  Copyright (c) 2013-2015, Marcus Rohrmoser mobile Software
+  Copyright (c) 2013-2021, Marcus Rohrmoser mobile Software
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without modification, are permitted
@@ -57,9 +57,9 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
         <!-- meta charset="utf-8" / -->
         <link rel="shortcut icon" type="image/png" href="{foaf:img/@rdf:resource}"/>
-        <link rel="stylesheet" type="text/css" media="screen" href="../ios-ota/screen.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/screen.css"/>
         <!-- http://www.alexanderjaeger.de/webseite-mit-css-iphone-optimieren/ -->
-        <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="../ios-ota/handheld.css"/>
+        <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="assets/handheld.css"/>
         <title><xsl:value-of select="doap:name"/></title>
       </head>
       <body>
@@ -71,8 +71,13 @@
             <xsl:apply-templates mode="m_current_version" select="." />
           </xsl:if>
         </xsl:for-each>
-        <h2>Interna</h2>
+        <h2>Internals</h2>
         <ul>
+          <xsl:for-each select="doap:homepage/@rdf:resource">
+            <li>
+              <a href="{.}">Homepage</a>
+            </li>
+          </xsl:for-each>
           <xsl:for-each select="doap:bug-database/@rdf:resource[starts-with(.,'mailto:')]">
             <li>
               <a href="{.}">Bugreport via Email</a>
@@ -84,7 +89,7 @@
             <li><a href="{.}">Ticket System</a></li>
           </xsl:for-each>
         </ul>
-        <h2>Alte Versionen</h2>
+        <h2>Old Versions</h2>
         <ul class="ipas" id="old">
           <xsl:for-each select="/rdf:RDF/doap:Version[@rdf:about = current()/doap:release/@rdf:resource]">
             <!-- sort by doap:created, all but most recent -->
@@ -97,12 +102,12 @@
         </ul>
         <hr/>
         <!-- p><a href="http://validator.w3.org/check?uri=referer"><img src=
-  "../assets/valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width=
+  "assets/valid-xhtml10.png" alt="Valid XHTML 1.0 Strict" height="31" width=
   "88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img style=
-  "border:0;width:88px;height:31px" src="../assets/vcss.png" alt=
+  "border:0;width:88px;height:31px" src="assets/vcss.png" alt=
   "CSS ist valide!" /></a></p -->
         <p id="poweredby" style="color:#888">
-          Powered by <a href="https://github.com/mro/iOS-OTA">github.com/mro/iOS-OTA</a><br/>
+          Powered by <a href="https://codeberg.org/mro/iOS-OTA">codeberg.org/mro/iOS-OTA</a><br/>
           RDF (<a href="https://en.wikipedia.org/wiki/DOAP">DOAP</a>): <tt>$ <a href="http://librdf.org/raptor/rapper.html">rapper</a> --guess --output turtle
           '<span id="my-url"><xsl:value-of select="$base_url"/></span>'</tt>
         </p>
@@ -117,12 +122,11 @@
       <p style="float:left">
         <a href="itms-services://?action=download-manifest&amp;url={$manifest_url}" class="iTunesArtwork">
           <img src="{$artwork_url}" alt="Icon" class="iTunesArtwork"/>
-          <img src="../ios-ota/iTunesArtwork-shine-512x512.svg" alt="artwork" class="iTunesArtworkMask"/>
+          <img src="assets/iTunesArtwork-shine-512x512.svg" alt="artwork" class="iTunesArtworkMask"/>
         </a>
       </p>
-      <p id="qr_code" style="float:right;background-color:white;padding:1.5ex">
-        <!-- img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=150x150&amp;chl={$base_url}" alt="QR Code" title="QR Code"/ -->
-        <img src="http://qrfree.kaywa.com/?l=1&amp;s=4&amp;d={$base_url}" alt="QR Code" title="QR Code"/>
+      <p id="qr_code" style="float:right;padding:0">
+        <img src="https://qr.mro.name/?q=L&amp;s=2&amp;d={$base_url}" alt="QR Code" title="QR Code"/>
       </p>
       <h1><xsl:value-of select="../doap:Project[1]/doap:name"/></h1>
     </div>

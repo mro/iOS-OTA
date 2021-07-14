@@ -2,18 +2,19 @@
 
 ## IPA OTA Deployment
 
-requires just an [IPA](https://en.wikipedia.org/wiki/.ipa_%28file_extension%29) as created
+requires an [IPA](https://en.wikipedia.org/wiki/.ipa_%28file_extension%29) as created
 e.g. by [Xcode](http://developer.apple.com/tools/xcode/)
-"Organizer -> Archived Applications -> Share -> Save to Disk".
+-> Window -> Organizer -> Archives -> Distribute App -> Ad Hoc.
 
-Extracts Icon, iTunesArtwork and Info.plist from the IPA and automagically creates the
-required manifest.
+Extracts Icon and Info.plist from the IPA and creates the required manifest.
 
 Creates a [doap](http://usefulinc.com/doap/) rdf/xml,
 rendered to html by a [xslt](http://www.w3.org/TR/xslt) stylesheet (client-side).
 
 ## Installation
 
-- [Apache Webserver with eruby](http://www.google.de/search?q="eruby"+apache)
-- or [Lighttpd Webserver with erubis](http://www.google.de/search?q="erubis"+lighttpd) running.
-- install [cfpropertylist gem](https://github.com/ckruse/CFPropertyList).
+1. Copy `./ios-ota/` anywhere, e.g. into your iOS project,
+2. adjust the first 3 lines of `./ios-ota/deploy-ipa.sh` accordingly and
+3. run it.
+
+Needs a webserver capable serving static files (the IPAs to test).

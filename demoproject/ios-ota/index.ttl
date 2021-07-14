@@ -1,0 +1,26 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    a doap:Project ;
+    doap:name "MyFancyApp" ;
+    doap:bug-database
+      <https://example.com/myuser/myfancyapp/issues>,
+      <mailto:issues@example.com?subject=%3CProblembeschreibung%3E&body=Project:%20MyFancyApp%0D%0A%0D%0AWas%20genau%20schmerzt?%20Bitte%20mit%20Screenshot,%20Merci!> ;
+    doap:repository [
+        a doap:GitRepository ;
+        doap:browse <https://example.com/myuser/myfancyapp> ;
+        doap:location <ssh://gogs@example.com/myuser/myfancyapp.git>
+    ] ;
+    doap:download-page <> ;
+    doap:homepage <https://example.com/myfancyapp> ;
+    foaf:img <iTunesArtwork.png> .
+
+<iTunesArtwork.png>
+    a foaf:Image ;
+    dct:format "image/png" ;
+    foaf:thumbnail <Icon.png> .
+

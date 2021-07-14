@@ -1,0 +1,13 @@
+
+# Cancelled after ~1h and 300 MB Upload
+
+Xcode -> Organizer -> Archives -> Distribute App -> iOS App Store -> Upload -> …
+
+# Alternative
+
+Xcode -> Organizer -> Archives -> Distribute App -> iOS App Store -> Export
+
+Generate an 'App specific Password' on https://appleid.apple.com/account/manage and
+use below.
+
+$ xcrun altool --upload-app --type ios --file MyApp.ipa --username '…' --password '…'

@@ -1,7 +1,7 @@
 /*
  * http://purl.mro.name/ios/ota
  *
- * Copyright (c) 2011-2015, Marcus Rohrmoser mobile Software
+ * Copyright (c) 2011-2021, Marcus Rohrmoser mobile Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are permitted
@@ -21,78 +21,47 @@
  * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
  * IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
  * THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- **/
+ *
+ */
 
 html {
-  background-color: white;
+  background-color: #C8CACC;
 }
 body {
-  background-color: #EAEAEC;
-  padding: 25px;
-  font: 14px/24px "Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;
-  width: 600px;
-  margin: 20px auto;
-  border-radius: 30px;
-  box-shadow: 1px 2px 1px #333;
+  background-color: #C8CACC;
+  width: 320px;
+  margin: 0px;
+  padding: 5px;
+  border-radius: 0;
 }
 h1 {
-  font-size:18pt;
-  margin: 5px;
 }
 #header h1 {
-  margin:0px;
-  padding:0;
 }
 #header p {
-  margin:0px;
-  padding:0;
 }
 h2 {
-  font-size:14pt;
-  margin: 3px;
-  padding: 2px;
 }
 #header {
-  height: 175px;
+  height: 60px;
 }
 .iTunesArtwork {
-  width:    175px;
-  height:   175px;
-}
-a.iTunesArtwork {
-  padding:0 15px 0 0;
+  width:    60px;
+  height:   60px;
 }
 img.iTunesArtwork, img.iTunesArtworkMask {
-  border-radius: 30px;
-  box-shadow: 0.5px 1px 1px #333;
+  border-radius: 10px;
+  box-shadow: 1px 2px 1px #333;
 }
-img.iTunesArtwork {
-  background-color: black;
+a.iTunesArtwork {
+  padding:0 5px 0 0;
 }
 img.iTunesArtworkMask {
-  margin: 0 0 0 -175px;
+  margin: 0 0 0 -60px;
   padding: 0;
-  width:    175px;
-  height:   175px;
-}   
-.changes {
+  width:    60px;
+  height:   60px;
+}
+#qr_code {
   display:none;
-}
-#poweredby {
-  font-size: 10px;  
-}
-
-
-@media (device-width: 320px), (device-width: 768px) {
-  /* OTA installation only makes sense on iOS devices. */
-  #current a.ota {
-    font-weight: bold;
-    color: white;
-    background-color: green;
-    padding: 1.5ex 3ex;
-    border-radius: 8px;
-  }
-  .zip {
-    display:none;
-  }
 }
