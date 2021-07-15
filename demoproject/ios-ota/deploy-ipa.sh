@@ -28,7 +28,23 @@ HELPEND
   [ -r "${1}" ] || exit 3
   exit 3
 }
-DateCreated="$(date -r "${1}" +%FT%T%z)"
+
+if [ "$(date -d '@123' --iso-8601=seconds 2>/dev/null)" = "1970-01-01T01:02:03+01:00" ] ; then
+  file_date_iso8601 () {
+    date -r "${1}" --iso-8601=seconds
+  }
+elif [ "$(date -r 123 +'%FT%T%z' | sed 's/..$/:&/g' 2>/dev/null)" = "1970-01-01T01:02:03+01:00" ] ; then
+  file_date_iso8601 () {
+    date -r "${1}" +'%FT%T%z' | sed 's/..$/:&/g'
+  }
+else
+  file_date_iso8601 () {
+    '1970-01-01T00:00:00+00:00'
+  }
+fi
+
+
+DateCreated="$(file_date_iso8601 "${1}")"
 cd "${me}/tmp/" || exit 3
 
 CFBundleIdentifier="$("${pb}" -c "Print :CFBundleIdentifier" Info.plist)"
